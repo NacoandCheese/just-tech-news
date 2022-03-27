@@ -55,8 +55,8 @@ User.init(
         //dont pluralize name of database table
         freezeTableName: true,
         //make it so our model name stays lowercase in the database
-        mondelName: 'user'
+        modelName: 'user'
     }
 );
 
-module.export = User;
+module.exports = User;
