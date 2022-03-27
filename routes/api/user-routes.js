@@ -64,7 +64,7 @@ router.post('/login', (req, res) => {
             return;
         }
 
-        res.json({ user: dbUserData });
+        // res.json({ user: dbUserData });
 
         //verify user
         const validPassword = dbUserData.checkPassword(req.body.password);
