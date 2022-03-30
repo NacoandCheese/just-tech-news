@@ -1,1 +1,20 @@
-<div>You are on the homepage</div>
+{{!-- take a single "post" object and pass it to the hompepage.handlebars template. Each property on the object(id,post_url,title,etc) becomes available in the template
+using the handlesbars.js{{}}syntax --}}
+<ol class="post-list">
+    {{#each posts as |post|}}
+    <li>
+        <article class="post">
+            <div class="title">
+                <a href="{{post.post_url}}" target="_blank">{{post.title}}</a>
+                <span>({{post.post_url}})</span>
+            </div>
+            <div class="meta">
+                {{post.vote_count}} points(s) by {{post.user.username}} on
+                {{post.created_at}}
+                |
+                <a href="/post/{{post.id}}">{{post.comments.length}} comment(s)</a>
+            </div>
+        </article>
+    </li>
+    {{/each}}
+</ol>
